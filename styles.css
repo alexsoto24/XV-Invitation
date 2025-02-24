@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Elegant Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Prata&display=swap');
+
+/* Light pink to white gradient background */
+body {
+    @apply flex flex-col justify-center items-center min-h-screen text-gray-900 relative;
+    background: linear-gradient(to bottom,#fac3d3, #fdfcfc); /* Light pink to white gradient */
+}
+
+/* Invitation Section with Silver Frame */
+.invitation {
+    @apply w-full max-w-4xl flex flex-col items-center justify-center text-center relative px-6 py-12 bg-white shadow-lg;
+    border: 8px solid transparent; /* Placeholder for silver effect */
+    border-image: linear-gradient(to right, #d4d4d4, #ffffff, #d4d4d4); /* Silver gradient frame */
+    border-image-slice: 1;
+    border-radius: 15px; /* Soft rounded corners */
+}
+
+/* Enlarged Decorative Corner Images - Perfectly Inside the Frame */
+.invitation::before,
+.invitation::after {
+    content: "";
+    position: absolute;
+    width: 420px; /* Increased size for more impact */
+    height: 420px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Top Left Decoration - Enlarged & Perfectly Inside */
+.invitation::before {
+    background-image: url("assets/decorations/topleft.png");
+    top: -100px;  /* Slightly inside the frame */
+    left: -100px; /* Slightly inside the frame */
+}
+
+/* Bottom Right Decoration - Enlarged & Perfectly Inside */
+.invitation::after {
+    background-image: url("assets/decorations/bottomright.png");
+    bottom: -100px;  /* Slightly inside the frame */
+    right: -100px;  /* Slightly inside the frame */
+}
+
+
+
+/* Elegant title */
+h1 {
+    @apply text-7xl text-pink-700 drop-shadow-lg;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+}
+
+/* Subtext */
+p {
+    @apply text-3xl text-gray-800 mt-4;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Countdown Timer */
+#countdown {
+    @apply text-5xl font-bold text-pink-500 mt-6;
+    font-family: 'Prata', serif;
+}
+
+/* Event Details */
+.event-details {
+    @apply text-2xl mt-8 font-semibold;
+    font-family: 'Playfair Display', serif;
+}
+
+/* RSVP Section - Adjusted Spacing */
+.rsvp {
+    @apply flex flex-col items-center gap-4 mt-16;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Fix spacing in RSVP text */
+.rsvp p {
+    @apply mt-2 text-2xl block;
+}
+
+/* RSVP Button - Adjusted Size & Elegant Font */
+.rsvp-button {
+    @apply bg-pink-500 text-white px-12 py-5 rounded-full shadow-md text-2xl mt-6 transition duration-300 hover:bg-pink-700;
+    font-family: 'Prata', serif;
+}
+
+/* Floating Butterflies */
+.butterfly-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.butterfly {
+    position: absolute;
+    width: 50px;
+    animation: float 5s infinite alternate ease-in-out;
+}
+
+/* Perfectly Symmetrical Four-Pointed Silver Sparkles */
+.sparkle {
+    position: absolute;
+    width: 20px; /* Slightly bigger for better clarity */
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='silver' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 1)) 
+            drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 0 14px rgba(192, 192, 192, 0.7));
+    animation: sparkle-twinkle 1.2s infinite alternate ease-in-out;
+    z-index: 9999;
+}
+
+/* Sparkle Twinkle Animation */
+@keyframes sparkle-twinkle {
+    0% { transform: scale(0.9) rotate(0deg); opacity: 0.8; }
+    50% { transform: scale(1.4) rotate(45deg); opacity: 1; }
+    100% { transform: scale(1.0) rotate(-45deg); opacity: 0.6; }
+}
+
