@@ -660,6 +660,17 @@ body {
   /* Moves the right floral decoration outward */
 }
 
+.giovanna-name {
+  font-size: 8rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(190 24 93 / var(--tw-text-opacity, 1));
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
 .giovanna-image {
   width: 500px;
   /* Keeps the larger size */

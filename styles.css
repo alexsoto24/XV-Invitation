@@ -81,6 +81,12 @@ body {
     right: -130px; /* Moves the right floral decoration outward */
 }
 
+.giovanna-name {
+    @apply text-9xl text-pink-700 drop-shadow-lg;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+}
+
 .giovanna-image {
     width: 500px; /* Keeps the larger size */
     height: auto;
