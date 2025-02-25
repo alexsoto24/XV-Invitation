@@ -5,47 +5,60 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quinceañera Invitation</title>
         <link href="output.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Prata&display=swap" rel="stylesheet">
     </head>    
 <body>
-
-    <!-- Sparkles -->
+    <!-- Sparkles Container -->
     <div id="sparkles"></div>
 
-    <!-- Full-Page Invitation with Silver Frame -->
-    <div class="invitation">
-        
-        <!-- Hero Section -->
-        <h1>Mis XV años</h1>
-        <p>Join us for a magical evening in honor of</p>
-        <p class="text-6xl text-gold-700 mt-4 font-bold">Giovanna Soto</p>
+    <div class="background-overlay"></div>
 
-        <!-- Countdown Timer -->
-        <div id="countdown"></div>
+        <!-- Invitation Card (Sits Inside the Frame) -->
+        <div class="invitation">
+            <!-- Corner Decorations -->
+            <img src="assets/decorations/topleft.png" alt="Floral Top Left" class="corner-decoration top-left-decoration">
+            <img src="assets/decorations/topright.png" alt="Floral Top Right" class="corner-decoration top-right-decoration">
+            <img src="assets/decorations/bottomleft.png" alt="Floral Bottom Left" class="corner-decoration bottom-left-decoration">
+            <img src="assets/decorations/bottomright.png" alt="Floral Bottom Right" class="corner-decoration bottom-right-decoration">
 
-        <!-- Event Details -->
-        <div class="event-details">
-            <h2 class="text-5xl font-bold text-pink-600">Event Details</h2>
-            <p>Date: <strong>April 12, 2025</strong></p>
-            <p>Location: <strong>Palm Breeze Hotel, Los Angeles, CA</strong></p>
-            <p>Reception begins at <strong>7:00 PM</strong></p>
+            <!-- Side Floral Decorations 
+            <img src="assets/decorations/floralleft.png" alt="Floral Left" class="side-decoration floral-left">
+            <img src="assets/decorations/floralright.png" alt="Floral Right" class="side-decoration floral-right"> -->
+
+            <img src="assets/decorations/crown.png" alt="Crown" class="crown-decoration">
+
+            <h1>Alejandro & Lidia</h1>
+            <p>tienen el honor de invitar a usted y a su familia a celebrar la</p>
+            <h1>Quinceañera</h1>
+            <p>de su hija</p>
+
+            <h1>Giovanna Soto</h1>
+            <img src="assets/pictures/Giovanna.jpg" alt="Giovanna Soto" class="giovanna-image">
+            
+
+            <!-- Event Details -->
+            <div class="event-details">
+                <p>Sabado 12 de Abril del 2025, 7:00 pm - 2:00 am</p>
+
+                <p><span class="event-label">Misa:</span> 7:00 pm, Jardín de Salón Jardín Cielo Río</p>
+                <p><span class="event-label">Recepción:</span> 8:00 pm, Salón Jardín Cielo Río, Avenida Santa Lucia 22114, Tijuana, B.C.</p>
+                
+            </div>
+
+            <!-- RSVP Section -->
+            <div class="rsvp">
+                <h1>Reservaciones</h1>
+                <a href="https://forms.gle/example" class="rsvp-button">Reservar</a>
+            </div>
+
+            <!-- Background Music -->
+            <audio id="bg-music" loop>
+                <source src="assets/audio/music.mp3" type="audio/mp3">
+            </audio>
+    
         </div>
 
-        <!-- RSVP Section -->
-        <div class="rsvp mt-12">
-            <h2 class="text-5xl font-bold text-pink-600">RSVP Now</h2>
-            <p class="mt-2 text-2xl block">Please confirm your attendance.</p>
-            <a href="https://forms.gle/example" class="rsvp-button">RSVP Here</a>
-        </div>
-
-        <!-- Background Music -->
-        <audio id="bg-music" autoplay loop>
-            <source src="assets/audio/music.mp3" type="audio/mp3">
-        </audio>
-    </div>
 
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>

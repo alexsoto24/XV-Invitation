@@ -5,51 +5,147 @@
 /* Import Elegant Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Prata&display=swap');
 
-/* Light pink to white gradient background */
+/* Light pink gradient background */
 body {
     @apply flex flex-col justify-center items-center min-h-screen text-gray-900 relative;
-    background: linear-gradient(to bottom,#fac3d3, #fdfcfc); /* Light pink to white gradient */
+    background: white;
 }
 
-/* Invitation Section with Silver Frame */
+/* Overlay PNG Image */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('assets/decorations/floralbackground.png') no-repeat center center;
+    background-size: cover;
+    pointer-events: none; /* Prevents interference with clicks */
+    z-index: -1; /* Ensures it's behind the content but above the gradient */
+}
+
+/* Corner Decorations - Enlarged & Slightly Moved Outward */
+.invitation .corner-decoration {
+    position: absolute;
+    width: 650px; /* Slightly larger for more emphasis */
+    height: auto;
+    z-index: 15; /* Keeps decorations on top */
+    pointer-events: none; /* Prevents interference with clicks */
+}
+
+/* Specific Positions (Subtly Moved Outward) */
+.invitation .top-left-decoration {
+    top: -120px; /* Slightly outward */
+    left: -120px;
+}
+
+.invitation .top-right-decoration {
+    top: -120px;
+    right: -120px;
+}
+
+.invitation .bottom-left-decoration {
+    bottom: -140px;
+    left: -140px;
+}
+
+.invitation .bottom-right-decoration {
+    bottom: -140px;
+    right: -140px;
+}
+
+.crown-decoration {
+    position: relative; /* Keeps it inside the invitation div */
+    display: block;
+    margin: 0 auto; /* Centers it horizontally */
+    width: 550px; /* Increased size */
+    height: auto; /* Keeps aspect ratio */
+    margin-top: -50px;
+}
+
+.side-decoration {
+    position: absolute;
+    width: 300px; /* Adjust width as needed */
+    height: auto;
+    top: 50%; /* Aligns them in the center vertically */
+    transform: translateY(-50%); /* Keeps them centered */
+    z-index: 15; /* Ensures they stay above the background but below content */
+    pointer-events: none; /* Prevents interaction issues */
+}
+
+.floral-left {
+    left: -130px; /* Moves the left floral decoration outward */
+}
+
+.floral-right {
+    right: -130px; /* Moves the right floral decoration outward */
+}
+
+.giovanna-image {
+    width: 500px; /* Keeps the larger size */
+    height: auto;
+    margin-top: 20px;
+    border-radius: 18px; /* Soft rounded edges */
+    border: 5px solid transparent; /* Thinner border */
+    background: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0, #ffffff, #b0b0b0); /* Metallic gradient */
+    box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.6), 
+                inset 0 -3px 6px rgba(0, 0, 0, 0.2), 
+                0 6px 12px rgba(0, 0, 0, 0.3); /* Adds realistic depth */
+    padding: 4px; /* Keeps slight spacing inside the border */
+}
+
+
+/* Invitation Card - Double Silver Borders with Square Edges */
 .invitation {
-    @apply w-full max-w-4xl flex flex-col items-center justify-center text-center relative px-6 py-12 bg-white shadow-lg;
-    border: 8px solid transparent; /* Placeholder for silver effect */
-    border-image: linear-gradient(to right, #d4d4d4, #ffffff, #d4d4d4); /* Silver gradient frame */
-    border-image-slice: 1;
-    border-radius: 15px; /* Soft rounded corners */
+    @apply w-full max-w-4xl flex flex-col items-center justify-center text-center px-8 py-14 relative;
+    background: linear-gradient(to bottom, #fac3d3, #fdfcfc);
+    padding: 60px; /* Ensures space inside */
+    margin-top: 100px; /* Ensures top is visible */
+    position: relative;
 }
 
-/* Enlarged Decorative Corner Images - Perfectly Inside the Frame */
-.invitation::before,
+/* Outer Silver Border - Rounded 3D Look */
+.invitation::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: calc(100% + 50px);
+    height: calc(100% + 50px);
+    border-radius: 12px; /* Softens corners */
+    border: 8px solid transparent;
+    background: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0, #ffffff, #b0b0b0);
+    box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.6), 
+                inset 0 -3px 6px rgba(0, 0, 0, 0.2), 
+                0 6px 12px rgba(0, 0, 0, 0.3); /* Adds 3D depth */
+    z-index: -1;
+}
+
+/* Inner Silver Border - Slightly Smaller with 3D Shine */
 .invitation::after {
     content: "";
     position: absolute;
-    width: 420px; /* Increased size for more impact */
-    height: 420px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 2;
-    pointer-events: none;
+    top: -12px;
+    left: -12px;
+    width: calc(100% + 24px);
+    height: calc(100% + 24px);
+    border-radius: 10px; /* Softens corners */
+    border: 6px solid transparent;
+    background: linear-gradient(135deg, #d0d0d0, #ffffff, #c0c0c0, #ffffff, #d0d0d0);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), 
+                inset 0 -2px 4px rgba(0, 0, 0, 0.2), 
+                0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a second 3D effect */
+    z-index: -1;
 }
 
-/* Top Left Decoration - Enlarged & Perfectly Inside */
-.invitation::before {
-    background-image: url("assets/decorations/topleft.png");
-    top: -100px;  /* Slightly inside the frame */
-    left: -100px; /* Slightly inside the frame */
-}
-
-/* Bottom Right Decoration - Enlarged & Perfectly Inside */
-.invitation::after {
-    background-image: url("assets/decorations/bottomright.png");
-    bottom: -100px;  /* Slightly inside the frame */
-    right: -100px;  /* Slightly inside the frame */
+.event-label {
+    @apply text-4xl text-pink-700 drop-shadow-md; /* Similar but smaller */
+    font-family: 'Great Vibes', cursive; /* Same as h1 */
+    font-weight: 400; /* Keep it light and elegant */
 }
 
 
-
-/* Elegant title */
+/* Elegant Title */
 h1 {
     @apply text-7xl text-pink-700 drop-shadow-lg;
     font-family: 'Great Vibes', cursive;
@@ -64,68 +160,48 @@ p {
 
 /* Countdown Timer */
 #countdown {
-    @apply text-5xl font-bold text-pink-500 mt-6;
+    @apply text-5xl text-pink-700 mt-12 drop-shadow-lg;
     font-family: 'Prata', serif;
 }
 
 /* Event Details */
 .event-details {
-    @apply text-2xl mt-8 font-semibold;
+    @apply text-3xl text-gray-800 mt-4;
     font-family: 'Playfair Display', serif;
 }
 
-/* RSVP Section - Adjusted Spacing */
+/* RSVP Section */
 .rsvp {
-    @apply flex flex-col items-center gap-4 mt-16;
+    @apply flex flex-col items-center mt-36;
     font-family: 'Playfair Display', serif;
+    margin-bottom: 80px;
 }
 
-/* Fix spacing in RSVP text */
-.rsvp p {
-    @apply mt-2 text-2xl block;
-}
-
-/* RSVP Button - Adjusted Size & Elegant Font */
+/* RSVP Button */
 .rsvp-button {
-    @apply bg-pink-500 text-white px-12 py-5 rounded-full shadow-md text-2xl mt-6 transition duration-300 hover:bg-pink-700;
+    @apply bg-pink-700 text-white px-12 py-5 rounded-full shadow-md text-2xl mt-16 transition duration-300 hover:bg-pink-800;
     font-family: 'Prata', serif;
 }
 
-/* Floating Butterflies */
-.butterfly-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.butterfly {
-    position: absolute;
-    width: 50px;
-    animation: float 5s infinite alternate ease-in-out;
-}
 
 /* Perfectly Symmetrical Four-Pointed Silver Sparkles */
 .sparkle {
-    position: absolute;
+    position: fixed;
     width: 20px; /* Slightly bigger for better clarity */
     height: 20px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='silver' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z'/%3E%3C/svg%3E") no-repeat center;
     background-size: contain;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 1)) 
-            drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
-            drop-shadow(0 0 14px rgba(192, 192, 192, 0.7));
-    animation: sparkle-twinkle 1.2s infinite alternate ease-in-out;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)) 
+            drop-shadow(0 0 18px rgba(255, 255, 255, 0.95))
+            drop-shadow(0 0 24px rgba(255, 255, 255, 0.9))
+            drop-shadow(0 0 30px rgba(192, 192, 192, 0.85))
+            brightness(2.0) contrast(2.0);
+    animation: sparkle-twinkle .45s infinite alternate ease-in-out;
     z-index: 9999;
 }
 
 /* Sparkle Twinkle Animation */
 @keyframes sparkle-twinkle {
-    0% { transform: scale(0.9) rotate(0deg); opacity: 0.8; }
-    50% { transform: scale(1.4) rotate(45deg); opacity: 1; }
-    100% { transform: scale(1.0) rotate(-45deg); opacity: 0.6; }
+    0% { transform: scale(0.1) rotate(0deg); opacity: 1; }
+    100% { transform: scale(1.4) rotate(45deg); opacity: 1; }
 }
-
