@@ -4,6 +4,8 @@
 
 /* Import Elegant Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
 
 /* 🌸 Full-Screen Background */
 body {
@@ -29,7 +31,7 @@ body {
 .invitation {
     @apply flex flex-col items-center justify-center text-center relative;
     width: 90%;
-    max-width: 500px; /* Ensures it doesn't get too wide */
+    max-width: 650px; /* Ensures it doesn't get too wide */
     background: linear-gradient(to bottom, #fac3d3, #fdfcfc);
     padding: 40px;
     position: relative;
@@ -77,9 +79,9 @@ body {
     position: relative;
     display: block;
     margin: 0 auto;
-    width: 280px;
+    width: 400px;
     height: auto;
-    margin-bottom: -20px;
+    margin-bottom: 10px;
 }
 
 /* 🌸 **Corner Decorations** (Now Inside & Centered) */
@@ -92,8 +94,8 @@ body {
 }
 
 /* 📌 Precise Corner Decoration Placement */
-.top-left-decoration { top: -25px; left: -25px; }
-.top-right-decoration { top: -25px; right: -25px; }
+.top-left-decoration { top: -30px; left: -30px; width: 400px; }
+.top-right-decoration { top: -30px; right: -30px; width: 400px; }
 .bottom-left-decoration { bottom: -30px; left: -30px; }
 .bottom-right-decoration { bottom: -30px; right: -30px; }
 
@@ -108,12 +110,10 @@ body {
 /* 🌸 **Giovanna’s Image** (Smaller for Mobile) */
 .giovanna-image {
     width: 100%;
-    max-width: 260px;
+    max-width: 500px;
     height: auto;
     margin-top: 15px;
     border-radius: 15px;
-    background: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0);
-    box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.6), 0 6px 12px rgba(0, 0, 0, 0.3);
     padding: 3px;
 }
 
@@ -128,7 +128,9 @@ h1 {
 /* ✨ Subtext */
 p {
     @apply text-2xl text-gray-800 mt-2;
-    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-family: 'Tangerine', cursive !important;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -162,24 +164,26 @@ p {
 /* 📌 RSVP Button */
 .rsvp-button {
     @apply bg-pink-700 text-white px-8 py-4 rounded-full shadow-md text-xl mt-8 transition duration-300 hover:bg-pink-800;
-    font-family: 'Prata', serif;
+    font-family: 'Tangerine', cursive;
+    font-size: 2rem;
 }
 
-/* ✨ Sparkles Effect */
 .sparkle {
     position: fixed;
-    width: 12px;
-    height: 12px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='silver' stroke-width='1.5'%3E%3Cpath d='M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z'/%3E%3C/svg%3E") no-repeat center;
+    width: 25px; /* Make it thinner */
+    height:25px; /* Make it longer */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='silver' stroke-width='1.0'%3E%3Cpath d='M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z'/%3E%3C/svg%3E") no-repeat center;
     background-size: contain;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)) 
             drop-shadow(0 0 18px rgba(255, 255, 255, 0.95))
             drop-shadow(0 0 24px rgba(255, 255, 255, 0.9))
             drop-shadow(0 0 30px rgba(192, 192, 192, 0.85))
-            brightness(2.0) contrast(2.0);
+            brightness(2.5) contrast(2.0);
     animation: sparkle-twinkle 0.45s infinite alternate ease-in-out;
     z-index: 9999;
+    transform: scale(1.2, 2.5); /* Stretches the sparkles vertically */
 }
+
 
 /* 🔹 Sparkle Animation */
 @keyframes sparkle-twinkle {
@@ -196,15 +200,15 @@ p {
     }
 
     .crown-decoration {
-        width: 160px;
+        width: 180px;
     }
 
     .corner-decoration {
-        width: 170px;
+        width: 200px;
     }
 
     .giovanna-image {
-        max-width: 200px;
+        max-width: 300px;
     }
 
     h1 {
@@ -213,7 +217,7 @@ p {
     }
 
     p {
-        font-size: 1rem; /* 20px */
+        font-size: 1.4rem; /* 20px */
         text-align: center;
     }
 
@@ -222,14 +226,22 @@ p {
         text-align: center;
     }
 
+    .rsvp {
+        @apply flex flex-col items-center mt-8; /* Move RSVP down slightly */
+        margin-bottom: 20px; /* Reduce space below */
+    }
+
     .rsvp-button {
-        font-size: 1rem;
-        padding: 12px 24px;
+        @apply bg-pink-700 text-white px-5 py-2 rounded-full shadow-md text-base mt-5 transition duration-300 hover:bg-pink-800;
+    }
+
+    .event-details {
+        margin-bottom: 5px; /* Reduce space between event details & RSVP */
     }
 
     /* 🔹 **Moving Corner Decorations Inside on Mobile** */
-    .top-left-decoration { top: -15px; left: -15px; }
-    .top-right-decoration { top: -15px; right: -15px; }
+    .top-left-decoration { top: -20px; left: -20px; width: 230px;}
+    .top-right-decoration { top: -20x; right: -20px; width: 230px;}
     .bottom-left-decoration { bottom: -15px; left: -15px; }
     .bottom-right-decoration { bottom: -15px; right: -15px; }
 }
