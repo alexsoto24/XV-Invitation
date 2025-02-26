@@ -7,14 +7,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
 
-/* 🌸 Full-Screen Background */
+/* Full-Screen Background */
 body {
     @apply flex flex-col justify-center items-center min-h-screen text-gray-900 relative;
     background: white;
     overflow-x: hidden;
 }
 
-/* 📌 Background Overlay */
+/* Background Overlay */
 .background-overlay {
     position: fixed;
     top: 0;
@@ -27,7 +27,7 @@ body {
     z-index: -1;
 }
 
-/* 🌸 The Invitation Card - Centered */
+/* The Invitation Card - Centered */
 .invitation {
     @apply flex flex-col items-center justify-center text-center relative;
     width: 90%;
@@ -40,7 +40,7 @@ body {
     margin-bottom: 100px
 }
 
-/* 🎀 Silver Frame - Adjusted */
+/* Silver Frame - Adjusted */
 .invitation::before {
     content: "";
     position: absolute;
@@ -48,7 +48,6 @@ body {
     left: -15px;
     width: calc(100% + 30px);
     height: calc(100% + 30px);
-    border-radius: 8px;
     border: 6px solid transparent;
     background: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0, #ffffff, #b0b0b0);
     box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.6), 
@@ -57,7 +56,7 @@ body {
     z-index: -1;
 }
 
-/* 🎀 Inner Silver Frame */
+/* Inner Silver Frame */
 .invitation::after {
     content: "";
     position: absolute;
@@ -74,7 +73,7 @@ body {
     z-index: -1;
 }
 
-/* 👑 Crown Decoration - Centered */
+/* Crown Decoration - Centered */
 .crown-decoration {
     position: relative;
     display: block;
@@ -84,22 +83,22 @@ body {
     margin-bottom: 10px;
 }
 
-/* 🌸 **Corner Decorations** (Now Inside & Centered) */
+/* **Corner Decorations** */
 .corner-decoration {
     position: absolute;
-    width: 325px;
+    width: 425px;
     height: auto;
     z-index: 10;
     pointer-events: none;
 }
 
-/* 📌 Precise Corner Decoration Placement */
-.top-left-decoration { top: -30px; left: -30px; width: 400px; }
-.top-right-decoration { top: -30px; right: -30px; width: 400px; }
-.bottom-left-decoration { bottom: -30px; left: -30px; }
-.bottom-right-decoration { bottom: -30px; right: -30px; }
+/* Precise Corner Decoration Placement */
+.top-left-decoration { top: -40px; left: -40px;}
+.top-right-decoration { top: -40px; right: -40px;}
+.bottom-left-decoration { bottom: -40px; left: -40px; }
+.bottom-right-decoration { bottom: -40px; right: -40px; }
 
-/* 🎀 **Giovanna’s Name** (Perfect Centering & Readability) */
+/* **Giovanna’s Name** */
 .giovanna-name {
     @apply text-6xl text-pink-700 drop-shadow-lg;
     font-family: 'Great Vibes', cursive;
@@ -107,7 +106,7 @@ body {
     text-align: center;
 }
 
-/* 🦋 General Butterfly Styling */
+/* General Butterfly Styling */
 .butterfly {
     position: absolute;
     width: 40px; /* Adjusted size */
@@ -116,25 +115,25 @@ body {
     pointer-events: none; /* Prevents interaction */
 }
 
-/* 🦋 Left Side Butterflies */
+/* Left Side Butterflies */
 .butterfly-left {
     transform: rotate(-15deg);
 }
 
-/* 🦋 Right Side Butterflies (MIRRORED CORRECTLY) */
+/* Right Side Butterflies (MIRRORED) */
 .butterfly-right {
     transform: scaleX(-1) rotate(15deg); /* Flips across Y-axis while keeping natural tilt */
 }
 
-/* 🦋 Adjusted Butterfly Positions */
-.butterfly-1 { top: 37%; left: 25%; animation: flutter 3.5s infinite ease-in-out alternate;}  /* Moved Closer to Picture */
-.butterfly-2 { top: 33%; right: 23%; animation: flutter-right 2.9s infinite ease-in-out alternate;} /* Moved Closer to Picture */
-.butterfly-3 { top: 53%; left: 23%; animation: flutter 3.5s infinite ease-in-out alternate;} /* Mid Left - No Change */
-.butterfly-4 { top: 46%; right: 15%; animation: flutter-right 3.8s infinite ease-in-out alternate;} /* Mid Right - No Change */
-.butterfly-5 { top: 65%; left: 39%; animation: flutter 4.4s infinite ease-in-out alternate;} /* Moved UP Closer to Picture */
-.butterfly-6 { top: 60%; right: 20%; animation: flutter-right 3.2s infinite ease-in-out alternate;} /* Moved UP Closer to Picture */
+/* Adjusted Butterfly Positions */
+.butterfly-1 { top: 33%; left: 25%; animation: flutter 3.5s infinite ease-in-out alternate;}  /* Moved Closer to Picture */
+.butterfly-2 { top: 29%; right: 23%; animation: flutter-right 2.9s infinite ease-in-out alternate;} /* Moved Closer to Picture */
+.butterfly-3 { top: 46%; left: 23%; animation: flutter 3.5s infinite ease-in-out alternate;} /* Mid Left - No Change */
+.butterfly-4 { top: 40%; right: 15%; animation: flutter-right 3.8s infinite ease-in-out alternate;} /* Mid Right - No Change */
+.butterfly-5 { top: 55%; left: 39%; animation: flutter 4.4s infinite ease-in-out alternate;} /* Moved UP Closer to Picture */
+.butterfly-6 { top: 52%; right: 20%; animation: flutter-right 3.2s infinite ease-in-out alternate;} /* Moved UP Closer to Picture */
 
-/* 🌸 **Giovanna’s Image** (Smaller for Mobile) */
+/* **Giovanna’s Image** */
 .giovanna-image {
     width: 100%;
     max-width: 500px;
@@ -144,7 +143,7 @@ body {
     padding: 3px;
 }
 
-/* 🎀 Elegant Title */
+/* Elegant Title */
 h1 {
     @apply text-5xl text-pink-700 mt-2 drop-shadow-lg;
     font-family: 'Great Vibes', cursive;
@@ -152,7 +151,7 @@ h1 {
     text-align: center;
 }
 
-/* ✨ Subtext */
+/* Subtext */
 p {
     @apply text-2xl text-gray-800 mt-2;
     font-size: 2rem;
@@ -167,35 +166,57 @@ p {
     font-weight: 400; /* Keep it light and elegant */
 }
 
-/* ⏳ Countdown Timer */
-#countdown {
-    @apply text-4xl text-pink-700 mt-6 drop-shadow-lg;
-    font-family: 'Prata', serif;
-    text-align: center;
-}
-
-/* 📅 Event Details */
+/* Event Details */
 .event-details {
     @apply text-2xl text-gray-800 mt-4;
     font-family: 'Playfair Display', serif;
     text-align: center;
 }
 
-/* 🎀 RSVP Section */
+/* RSVP Section */
 .rsvp {
     @apply flex flex-col items-center mt-16;
     font-family: 'Playfair Display', serif;
     margin-bottom: 15px;
 }
 
-/* 📌 RSVP Button */
+/* RSVP Button */
 .rsvp-button {
-    @apply bg-pink-700 text-white px-8 py-4 rounded-full shadow-md text-xl mt-8 transition duration-300 hover:bg-pink-800;
+    @apply bg-pink-700 text-white px-8 py-4 rounded-full shadow-md text-xl mt-4 transition duration-300 hover:bg-pink-800;
     font-family: 'Tangerine', cursive;
     font-size: 2rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* 🎵 Music Button */
+.rsvp-button:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0px 0px 10px rgba(255, 182, 193, 0.7); /* Pink glow effect */
+}
+
+/* Poem & Music Container (Keeps them together) */
+.poem-music-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Poem Text */
+.poem-text {
+    font-family: 'Tangerine', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #be185d; /* Pink-700 */
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px; /* Adds spacing between poem and button */
+    max-width: 480px;
+}
+
+/* Music Button (Below Poem) */
 .music-button {
     display: flex;
     align-items: center;
@@ -206,11 +227,14 @@ p {
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    position: relative;
-    margin-top: 10px; /* Moves it closer to RSVP */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* 🎵 Play Icon (Single Triangle) */
+.music-button:hover {
+    transform: scale(1.1); /* zoom effect */
+}
+
+/* Play Icon */
 .play-icon {
     width: 0;
     height: 0;
@@ -219,7 +243,7 @@ p {
     border-bottom: 7px solid transparent;
 }
 
-/* ⏸ Pause Icon (Centered Square) */
+/*Pause Icon */
 .pause-icon {
     width: 10px;
     height: 10px;
@@ -262,7 +286,7 @@ p {
     100% { transform: scaleX(-1) translateY(0px) rotate(15deg); }
 }
 
-/* 📌 **PERFECT Mobile Scaling** */
+/* ** Mobile Scaling** */
 @media (max-width: 768px) {
     .invitation {
         width: 90%;
@@ -275,18 +299,18 @@ p {
     }
 
     .corner-decoration {
-        width: 200px;
+        width: 250px;
     }
 
     .butterfly { width: 33px; } /* Make them smaller for mobile */
 
     /* 🦋 Adjusted Positions for Mobile */
-    .butterfly-1 { top: 37%; left: 20%; } /* Moved Down for Mobile */
-    .butterfly-2 { top: 34%; right: 30%; } /* Moved Down for Mobile */
-    .butterfly-3 { top: 49%; left: 17%; } /* Adjusted for Mobile */
-    .butterfly-4 { top: 47%; right: 10%; } /* Adjusted for Mobile */
-    .butterfly-5 { top: 57%; left: 28%; } /* Moved Up for Mobile */
-    .butterfly-6 { top: 55%; right: 19%; } /* Moved Up for Mobile */
+    .butterfly-1 { top: 31%; left: 18%; } /* Moved Down for Mobile */
+    .butterfly-2 { top: 29%; right: 30%; } /* Moved Down for Mobile */
+    .butterfly-3 { top: 41%; left: 17%; } /* Adjusted for Mobile */
+    .butterfly-4 { top: 36%; right: 10%; } /* Adjusted for Mobile */
+    .butterfly-5 { top: 48%; left: 34%; } /* Moved Up for Mobile */
+    .butterfly-6 { top: 45%; right: 19%; } /* Moved Up for Mobile */
 
     .giovanna-image {
         max-width: 300px;
@@ -316,10 +340,19 @@ p {
         @apply bg-pink-700 text-white px-5 py-2 rounded-full shadow-md text-base mt-4 transition duration-300 hover:bg-pink-800;
     }
 
+    .poem-music-container {
+        margin-top: 30px; /* Slightly reduced space for mobile */
+        margin-bottom: 30px;
+    }
+
+    .poem-text {
+        font-size: 1.6rem; /* Adjust font size for mobile */
+        max-width: 250px;
+    }
+
     .music-button {
         width: 40px;
         height: 40px;
-        margin-top: 8px; /* Adjusts spacing for smaller screens */
     }
 
     .play-icon {
@@ -333,13 +366,21 @@ p {
         height: 8px;
     }
 
+    .rsvp-button:hover {
+        transform: scale(1.02); /* Less intense effect for mobile */
+    }
+
+    .music-button:hover {
+        transform: rotate(10deg) scale(1.05); /* Less rotation on mobile */
+    }
+
     .event-details {
         margin-bottom: 5px; /* Reduce space between event details & RSVP */
     }
 
     /* 🔹 **Moving Corner Decorations Inside on Mobile** */
-    .top-left-decoration { top: -20px; left: -20px; width: 230px;}
-    .top-right-decoration { top: -20x; right: -20px; width: 230px;}
-    .bottom-left-decoration { bottom: -15px; left: -15px; }
-    .bottom-right-decoration { bottom: -15px; right: -15px; }
+    .top-left-decoration { top: -25px; left: -25px;}
+    .top-right-decoration { top: -25px; right: -25px;}
+    .bottom-left-decoration { bottom: -25px; left: -25px; }
+    .bottom-right-decoration { bottom: -25px; right: -25px; }
 }
