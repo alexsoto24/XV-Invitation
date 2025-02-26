@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggle-music");
     const audio = document.getElementById("bg-music");
 
-    function playMusic() {
-        audio.play().catch(error => console.log("Autoplay blocked, waiting for user interaction."));
-        document.removeEventListener("click", playMusic); // Remove event listener after first click
-    }
-
-    document.addEventListener("click", playMusic);
+    toggleButton.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play().catch(error => console.log("Autoplay blocked:", error));
+            toggleButton.innerHTML = '<div class="pause-icon"></div>'; // Set Pause Icon
+        } else {
+            audio.pause();
+            toggleButton.innerHTML = '<div class="play-icon"></div>'; // Set Play Icon
+        }
+    });
 });
+
 
 
 // Sparkles Effect - Increased Frequency & Density

@@ -107,6 +107,33 @@ body {
     text-align: center;
 }
 
+/* 🦋 General Butterfly Styling */
+.butterfly {
+    position: absolute;
+    width: 40px; /* Adjusted size */
+    height: auto;
+    z-index: 12; /* Keeps butterflies above the background but below text */
+    pointer-events: none; /* Prevents interaction */
+}
+
+/* 🦋 Left Side Butterflies */
+.butterfly-left {
+    transform: rotate(-15deg);
+}
+
+/* 🦋 Right Side Butterflies (MIRRORED CORRECTLY) */
+.butterfly-right {
+    transform: scaleX(-1) rotate(15deg); /* Flips across Y-axis while keeping natural tilt */
+}
+
+/* 🦋 Adjusted Butterfly Positions */
+.butterfly-1 { top: 37%; left: 25%; animation: flutter 3.5s infinite ease-in-out alternate;}  /* Moved Closer to Picture */
+.butterfly-2 { top: 33%; right: 23%; animation: flutter-right 2.9s infinite ease-in-out alternate;} /* Moved Closer to Picture */
+.butterfly-3 { top: 53%; left: 23%; animation: flutter 3.5s infinite ease-in-out alternate;} /* Mid Left - No Change */
+.butterfly-4 { top: 46%; right: 15%; animation: flutter-right 3.8s infinite ease-in-out alternate;} /* Mid Right - No Change */
+.butterfly-5 { top: 65%; left: 39%; animation: flutter 4.4s infinite ease-in-out alternate;} /* Moved UP Closer to Picture */
+.butterfly-6 { top: 60%; right: 20%; animation: flutter-right 3.2s infinite ease-in-out alternate;} /* Moved UP Closer to Picture */
+
 /* 🌸 **Giovanna’s Image** (Smaller for Mobile) */
 .giovanna-image {
     width: 100%;
@@ -158,7 +185,7 @@ p {
 .rsvp {
     @apply flex flex-col items-center mt-16;
     font-family: 'Playfair Display', serif;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 /* 📌 RSVP Button */
@@ -166,6 +193,37 @@ p {
     @apply bg-pink-700 text-white px-8 py-4 rounded-full shadow-md text-xl mt-8 transition duration-300 hover:bg-pink-800;
     font-family: 'Tangerine', cursive;
     font-size: 2rem;
+}
+
+/* 🎵 Music Button */
+.music-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #be185d;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px; /* Moves it closer to RSVP */
+}
+
+/* 🎵 Play Icon (Single Triangle) */
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 12px solid white;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+/* ⏸ Pause Icon (Centered Square) */
+.pause-icon {
+    width: 10px;
+    height: 10px;
+    background-color: white;
 }
 
 .sparkle {
@@ -191,6 +249,19 @@ p {
     100% { transform: scale(1.4) rotate(45deg); opacity: 1; }
 }
 
+/* 🔹 Butterfly Floating Animation */
+@keyframes flutter {
+    0% { transform: translateY(0px) rotate(-15deg); }
+    50% { transform: translateY(-12px) rotate(-10deg); }
+    100% { transform: translateY(0px) rotate(-15deg); }
+}
+
+@keyframes flutter-right {
+    0% { transform: scaleX(-1) translateY(0px) rotate(15deg); }
+    50% { transform: scaleX(-1) translateY(-12px) rotate(10deg); }
+    100% { transform: scaleX(-1) translateY(0px) rotate(15deg); }
+}
+
 /* 📌 **PERFECT Mobile Scaling** */
 @media (max-width: 768px) {
     .invitation {
@@ -206,6 +277,16 @@ p {
     .corner-decoration {
         width: 200px;
     }
+
+    .butterfly { width: 33px; } /* Make them smaller for mobile */
+
+    /* 🦋 Adjusted Positions for Mobile */
+    .butterfly-1 { top: 37%; left: 20%; } /* Moved Down for Mobile */
+    .butterfly-2 { top: 34%; right: 30%; } /* Moved Down for Mobile */
+    .butterfly-3 { top: 49%; left: 17%; } /* Adjusted for Mobile */
+    .butterfly-4 { top: 47%; right: 10%; } /* Adjusted for Mobile */
+    .butterfly-5 { top: 57%; left: 28%; } /* Moved Up for Mobile */
+    .butterfly-6 { top: 55%; right: 19%; } /* Moved Up for Mobile */
 
     .giovanna-image {
         max-width: 300px;
@@ -228,11 +309,28 @@ p {
 
     .rsvp {
         @apply flex flex-col items-center mt-8; /* Move RSVP down slightly */
-        margin-bottom: 20px; /* Reduce space below */
+        margin-bottom: 1px; /* Reduce space below */
     }
 
     .rsvp-button {
-        @apply bg-pink-700 text-white px-5 py-2 rounded-full shadow-md text-base mt-5 transition duration-300 hover:bg-pink-800;
+        @apply bg-pink-700 text-white px-5 py-2 rounded-full shadow-md text-base mt-4 transition duration-300 hover:bg-pink-800;
+    }
+
+    .music-button {
+        width: 40px;
+        height: 40px;
+        margin-top: 8px; /* Adjusts spacing for smaller screens */
+    }
+
+    .play-icon {
+        border-left: 10px solid white;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+    }
+
+    .pause-icon {
+        width: 8px;
+        height: 8px;
     }
 
     .event-details {
