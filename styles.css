@@ -81,6 +81,7 @@ body {
     width: 400px;
     height: auto;
     margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 /* **Corner Decorations** */
@@ -200,7 +201,7 @@ p {
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     position: relative;
 }
 
@@ -295,7 +296,7 @@ p {
     }
 
     .crown-decoration {
-        width: 180px;
+        width: 200px;
     }
 
     .corner-decoration {
@@ -304,13 +305,13 @@ p {
 
     .butterfly { width: 33px; } /* Make them smaller for mobile */
 
-    /* 🦋 Adjusted Positions for Mobile */
-    .butterfly-1 { top: 31%; left: 18%; } /* Moved Down for Mobile */
-    .butterfly-2 { top: 29%; right: 30%; } /* Moved Down for Mobile */
-    .butterfly-3 { top: 41%; left: 17%; } /* Adjusted for Mobile */
-    .butterfly-4 { top: 36%; right: 10%; } /* Adjusted for Mobile */
-    .butterfly-5 { top: 48%; left: 34%; } /* Moved Up for Mobile */
-    .butterfly-6 { top: 45%; right: 19%; } /* Moved Up for Mobile */
+    /* Adjusted Butterfly Positions for Mobile */
+    .butterfly-1 { top: 32%; left: 18%; } /* Moved Down for Mobile */
+    .butterfly-2 { top: 30%; right: 30%; } /* Moved Down for Mobile */
+    .butterfly-3 { top: 42%; left: 17%; } /* Adjusted for Mobile */
+    .butterfly-4 { top: 37%; right: 10%; } /* Adjusted for Mobile */
+    .butterfly-5 { top: 49%; left: 34%; } /* Moved Up for Mobile */
+    .butterfly-6 { top: 46%; right: 19%; } /* Moved Up for Mobile */
 
     .giovanna-image {
         max-width: 300px;
@@ -383,4 +384,14 @@ p {
     .top-right-decoration { top: -25px; right: -25px;}
     .bottom-left-decoration { bottom: -25px; left: -25px; }
     .bottom-right-decoration { bottom: -25px; right: -25px; }
+}
+
+@media (max-width: 371px){
+/* Adjusted Positions for Mobile devices with with less that 372 pixels */
+    .butterfly-1 { top: 36%; left: 18%; } /* Moved Down for Mobile */
+    .butterfly-2 { top: 33%; right: 30%; } /* Moved Down for Mobile */
+    .butterfly-3 { top: 45%; left: 17%; } /* Adjusted for Mobile */
+    .butterfly-4 { top: 40%; right: 10%; } /* Adjusted for Mobile */
+    .butterfly-5 { top: 52%; left: 34%; } /* Moved Up for Mobile */
+    .butterfly-6 { top: 49%; right: 19%; } /* Moved Up for Mobile */
 }
