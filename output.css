@@ -585,7 +585,7 @@ body {
   z-index: -1;
 }
 
-/* The Invitation Card - Centered */
+/* 🌸 The Invitation Card (Keeps Background Intact) */
 
 .invitation {
   display: flex;
@@ -595,49 +595,46 @@ body {
   text-align: center;
   width: 90%;
   max-width: 650px;
-  /* Ensures it doesn't get too wide */
   background: linear-gradient(to bottom, #fac3d3, #fdfcfc);
-  padding: 40px;
+  /* Keeps the pink gradient */
+  padding: 0px;
   position: relative;
   margin: auto;
-  /* Centers the card */
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
-/* Silver Frame - Adjusted */
+/* 🎀 Outer Silver Frame */
 
 .invitation::before {
   content: "";
   position: absolute;
-  top: -15px;
-  left: -15px;
-  width: calc(100% + 30px);
-  height: calc(100% + 30px);
-  border: 6px solid transparent;
+  top: -12px;
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
   background: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0, #ffffff, #b0b0b0);
-  box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.6), 
-                inset 0 -3px 6px rgba(0, 0, 0, 0.2), 
-                0 6px 12px rgba(0, 0, 0, 0.3);
+  border: 6px solid transparent;
+  -o-border-image: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0, #ffffff, #b0b0b0) 1;
+     border-image: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0, #ffffff, #b0b0b0) 1;
+  /* Silver Effect */
   z-index: -1;
 }
 
-/* Inner Silver Frame */
+/* 🎀 Inner Silver Frame */
 
 .invitation::after {
   content: "";
   position: absolute;
-  top: -8px;
-  left: -8px;
-  width: calc(100% + 16px);
-  height: calc(100% + 16px);
-  border-radius: 6px;
-  border: 4px solid transparent;
-  background: linear-gradient(135deg, #d0d0d0, #ffffff, #c0c0c0, #ffffff, #d0d0d0);
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), 
-                inset 0 -2px 4px rgba(0, 0, 0, 0.2), 
-                0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Adds a second 3D effect */
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  background: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0, #ffffff, #b0b0b0);
+  border: 6px solid transparent;
+  -o-border-image: linear-gradient(135deg, #d0d0d0, #ffffff, #c0c0c0, #ffffff, #d0d0d0) 1;
+     border-image: linear-gradient(135deg, #d0d0d0, #ffffff, #c0c0c0, #ffffff, #d0d0d0) 1;
+  /* Softer Silver */
   z-index: -1;
 }
 

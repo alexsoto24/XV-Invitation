@@ -41,4 +41,4 @@ function createSparkle() {
 }
 
 // Generate sparkles every 100ms (high frequency)
-setInterval(createSparkle, 100);
+setInterval(createSparkle, 200);
