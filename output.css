@@ -620,6 +620,7 @@ body {
   width: calc(100% + 32px);
   height: calc(100% + 32px);
   background: linear-gradient(135deg, #b0b0b0, #ffffff, #a0a0a0, #ffffff, #b0b0b0);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   /* Matching rounded corners */
   z-index: -2;
